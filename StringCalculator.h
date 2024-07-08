@@ -1,4 +1,4 @@
-int input (const char* input)
+int add (const char* input)
 {
     return -1;
 }
