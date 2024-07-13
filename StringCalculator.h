@@ -18,7 +18,7 @@ bool isstringZero(const char* input)
 
 int add (const char* input)
 {
-    if ((isemptystring(input)) || (isstringZero(input)) == true)
+    if (((isemptystring(input)) || (isstringZero(input))) == true)
     {
         return 0;
     }
