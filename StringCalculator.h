@@ -11,7 +11,7 @@ bool isemptystring(const char* input)
 
 int add (const char* input)
 {
-    if(isemptystring(input) == True)
+    if(isemptystring(input) == true)
     {
         return 0;
     }
