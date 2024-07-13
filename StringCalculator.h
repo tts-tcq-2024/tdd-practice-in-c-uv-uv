@@ -9,7 +9,7 @@ bool isemptystring(const char* input)
 
 bool isstringZero(const char* input)
 {
-    if (input == '0')
+    if (input == 0)
     {
         return true;
     }
