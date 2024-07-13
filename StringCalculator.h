@@ -2,9 +2,9 @@ bool isemptystring(const char* input)
 {
     if (input == NULL || input[0] == '\0')
     {
-        return True;
+        return true;
     }
-    return False;
+    return false;
 }
 
 
