@@ -1,24 +1,28 @@
-bool isemptystring(const char* input)
+int isemptystring(const char* input)
 {
     if (input == NULL || input[0] == '\0')
     {
-        return true;
+        return 1;
     }
-    return false;
+    return 0;
 }
 
-bool isstringZero(const char* input)
+int isstringZero(const char* input)
 {
     if (input == 0)
     {
-        return true;
+        return 1;
     }
-    return false;
+    return 0;
 }
 
 int add (const char* input)
 {
-    if (((isemptystring(input)) || (isstringZero(input))) == true)
+    int var1 = 0;
+    int var2 = 0;  
+    var1 = isemptystring(input);
+    var2 = isstringZero(input);
+    if (1 == (var1 | var2))
     {
         return 0;
     }
