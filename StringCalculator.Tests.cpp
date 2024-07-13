@@ -8,7 +8,7 @@ TEST(StringCalculatorAddTests, ExpectZeroForEmptyInput) {
     ASSERT_EQ(result, expectedresult);
 }
 */
-TEST(StringCalculatorAddTests, ExpectZeroForSingleZero) {
+TEST(StringCalculatorAddTests, ExpectZeroForEmpty) {
     int expectedresult = 0;
     const char* input = "";
     int result = add(input);
