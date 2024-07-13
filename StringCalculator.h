@@ -22,27 +22,52 @@ int islessthanthousand(const char *input_seg)
     return 0;
      
 }
-int calculatesum(const char* input)
+
+
+void append_custom_delimiter(const char* input, char* delimiter) {
+    int i = 2; 
+    while(input[i] != '\n')
+    {
+        char temp[1] = {input[i]};
+        strncat (delimiter, temp,1);
+        i = i+1;
+    }
+}
+
+void checkcustomdelimiter(const char* input, char* delimiter)
+{
+    if (input[0] == '/' && input[1] == '/')
+    {
+        append_custom_delimiter(input,delimiter);
+    }
+    else
+    {
+        delimiter = ",\n";
+    }
+}
+
+int calculatesum(const char* input, char* delimiter)
 {
     int sum = 0;
     char* dup_input = NULL;
     dup_input = strdup (input);
-    char* input_seg = strtok(dup_input,",\n");
+    char* input_seg = strtok(dup_input,delimiter);
     while(input_seg != NULL)
     {
-       sum = sum + islessthanthousand(input_seg);
-       input_seg = strtok(NULL,",\n");
+        sum = sum + islessthanthousand(input_seg);
+        input_seg = strtok(NULL,delimiter);
     }
     return sum;
 }
 
 int add (const char* input)
 {
-
+    char delimiter[128] = ",";
     if (1 == isemptystring(input))
     {
         return 0;
     }
-    return calculatesum(input);
+    checkcustomdelimiter(input, delimiter);
+    return calculatesum(input, delimiter);
     
 }
