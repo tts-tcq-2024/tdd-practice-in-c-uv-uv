@@ -10,7 +10,18 @@ int isemptystring(const char* input)
     }
     return 0;
 }
-
+int islessthanthousand(const char *input_seg)
+{    
+    int sum = 0;
+    int value_check = atoi(input_seg);
+    if(value_check < 1000)
+    {
+        sum += value_check;
+        return sum;
+    }
+    return 0;
+     
+}
 int calculatesum(const char* input)
 {
     int sum = 0;
@@ -19,8 +30,8 @@ int calculatesum(const char* input)
     char* input_seg = strtok(dup_input,",\n");
     while(input_seg != NULL)
     {
-        sum += atoi(input_seg);
-        input_seg = strtok(NULL,",\n");
+       sum = sum + islessthanthousand(input_seg);
+       input_seg = strtok(NULL,",\n");
     }
     return sum;
 }
