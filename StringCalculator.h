@@ -16,7 +16,7 @@ int calculatesum(const char* input)
     int sum = 0;
     char* dup_input = NULL;
     dup_input = strdup (input);
-    char* input_seg = strtok(dup_input,",");
+    char* input_seg = strtok(dup_input,",\n");
     while(input_seg != NULL)
     {
         sum += atoi(input_seg);
