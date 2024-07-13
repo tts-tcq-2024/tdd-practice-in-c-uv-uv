@@ -20,7 +20,7 @@ int calculatesum(const char* input)
     while(input_seg != NULL)
     {
         sum += atoi(input_seg);
-        input_seg = strtok(NULL,",");
+        input_seg = strtok(NULL,",\n");
     }
     return sum;
 }
