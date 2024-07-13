@@ -15,7 +15,7 @@ int calculatesum(const char* input)
     int sum = 0;
     for (int i=0; i<strlen(input); i++)
     {
-        sum+= atoi(input[1]);
+        sum=sum + (input[i] - '0');
     }
     return sum;
 }
