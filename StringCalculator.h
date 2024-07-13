@@ -15,12 +15,12 @@ int calculatesum(const char* input)
 {
     int sum = 0;
     char* dup_input = NULL;
-    strcpy(input,dup_input);
+    dup_input = strdup (input);
     char* input_seg = strtok(dup_input,",");
     while(input_seg != NULL)
     {
         sum += atoi(input_seg);
-        input_seg = strtok(dup_input,",");
+        input_seg = strtok(NULL,",");
     }
     return sum;
 }
