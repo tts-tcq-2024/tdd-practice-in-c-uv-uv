@@ -1,3 +1,6 @@
+#include <string.h>
+
+
 int isemptystring(const char* input)
 {
     if (input == NULL || input[0] == '\0')
@@ -7,24 +10,23 @@ int isemptystring(const char* input)
     return 0;
 }
 
-int isstringZero(const char* input)
+int calculatesum(const char* input)
 {
-    if (input[0] == 0)
+    int sum = 0;
+    for (int i=0; i<strlen(input); i++)
     {
-        return 1;
+        sum+= input[1];
     }
-    return 0;
+    return sum;
 }
 
 int add (const char* input)
 {
-    int var1 = 0;
-    int var2 = 0;  
-    var1 = isemptystring(input);
-    var2 = isstringZero(input);
-    if (1 == (var1 | var2))
+
+    if (1 == isemptystring(input))
     {
         return 0;
     }
-    return -1;
+    return calculatesum(input);
+    
 }
