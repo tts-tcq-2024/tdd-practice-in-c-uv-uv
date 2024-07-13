@@ -1,4 +1,5 @@
 #include <string.h>
+#include<stdlib.h>
 
 
 int isemptystring(const char* input)
@@ -13,9 +14,13 @@ int isemptystring(const char* input)
 int calculatesum(const char* input)
 {
     int sum = 0;
-    for (int i=0; i<strlen(input); i++)
+    char* dup_input = NULL;
+    strcpy(input,dup_input);
+    char* input_seg = strtok(dup_input,",");
+    while(input_seg != NULL)
     {
-        sum=sum + (input[i] - '0');
+        sum += atoi(input_seg);
+        input_seg = strtok(dup_input,",");
     }
     return sum;
 }
