@@ -1,6 +1,7 @@
 #include <string.h>
 #include<stdlib.h>
 
+char error_message= "";
 
 int isemptystring(const char* input)
 {
@@ -64,7 +65,6 @@ int calculatesum(const char* input, char* delimiter)
 
 int add (const char* input)
 {
-    char error_message[256] = "";
     char delimiter[128] = ',\n';
     if (1 == isemptystring(input))
     {
