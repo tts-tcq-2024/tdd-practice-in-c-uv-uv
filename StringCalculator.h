@@ -1,7 +1,7 @@
 #include <string.h>
 #include<stdlib.h>
 
-char error_message= "";
+char error_message[128]= "";
 
 int isemptystring(const char* input)
 {
@@ -45,7 +45,7 @@ void checkcustomdelimiter(const char* input, char* delimiter)
     }
     else
     {
-        delimiter = ',\n';
+        delimiter = ",\n";
     }
 }
 
@@ -65,7 +65,7 @@ int calculatesum(const char* input, char* delimiter)
 
 int add (const char* input)
 {
-    char delimiter[128] = ',\n';
+    char delimiter[128] = ",\n";
     if (1 == isemptystring(input))
     {
         return 0;
