@@ -24,7 +24,8 @@ int islessthanthousand(const char *input_seg)
 }
 
 
-void append_custom_delimiter(const char* input, char* delimiter) {
+void append_custom_delimiter(const char* input, char* delimiter)
+ {
     int i = 2; 
     while(input[i] != '\n')
     {
