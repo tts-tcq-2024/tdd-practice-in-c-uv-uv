@@ -55,7 +55,6 @@ void appendcustomdelimiter(const char* input, char* delimiter)
 
 void checkcustomdelimiter(const char* input, char* delimiter)
 {
-    delimiter = ",\n";
     if (input[0] == '/' && input[1] == '/')
     {
         strcpy(delimiter, "");
@@ -79,7 +78,7 @@ int calculatesum(const char* input, char* delimiter)
 
 int add (const char* input)
 {
-    char delimiter[128] = "";
+    char delimiter[128] = ",\n";
     if (1 == isemptystring(input))
     {
         return 0;
