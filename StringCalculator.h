@@ -10,6 +10,7 @@ int isemptystring(const char* input)
     }
     return 0;
 }
+
 int islessthanthousand(const char *input_seg)
 {    
     int sum = 0;
@@ -23,8 +24,7 @@ int islessthanthousand(const char *input_seg)
      
 }
 
-
-void append_custom_delimiter(const char* input, char* delimiter)
+void appendcustomdelimiter(const char* input, char* delimiter)
  {
     int i = 2; 
     while(input[i] != '\n')
@@ -40,7 +40,7 @@ void checkcustomdelimiter(const char* input, char* delimiter)
     if (input[0] == '/' && input[1] == '/')
     {
         strcpy(delimiter, "");
-        append_custom_delimiter(input,delimiter);
+        appendcustomdelimiter(input,delimiter);
     }
     else
     {

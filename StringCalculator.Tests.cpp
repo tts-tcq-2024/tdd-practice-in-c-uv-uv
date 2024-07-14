@@ -57,4 +57,11 @@ TEST(StringCalculatorAddTests, ExpectSumWithMultipleCustomDelimiter) {
     int result = add(input);
     ASSERT_EQ(result, expectedresult);
 }
+
+TEST(StringCalculatorAddTests, ExpectExceptionwithNegative) {
+    const char* input = "1,-2";
+    int result = add(input);
+    ASSERT_EQ(result, -1);
+    ASSERT_STREQ(error_message, "Negative not allowed");
+}
 /**/
