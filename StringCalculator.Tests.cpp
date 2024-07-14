@@ -52,7 +52,7 @@ TEST(StringCalculatorAddTests, ExpectSumWithCustomDelimiter) {
 }
 
 TEST(StringCalculatorAddTests, ExpectSumWithMultipleCustomDelimiter) {
-    int expectedresult = 3;
+    int expectedresult = 6;
     const char*  input = "//[***]\n1***2***3";
     int result = add(input);
     ASSERT_EQ(result, expectedresult);
