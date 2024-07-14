@@ -55,14 +55,11 @@ void appendcustomdelimiter(const char* input, char* delimiter)
 
 void checkcustomdelimiter(const char* input, char* delimiter)
 {
+    delimiter = ",\n";
     if (input[0] == '/' && input[1] == '/')
     {
         strcpy(delimiter, "");
         appendcustomdelimiter(input,delimiter);
-    }
-    else
-    {
-        delimiter = ",\n";
     }
 }
 
