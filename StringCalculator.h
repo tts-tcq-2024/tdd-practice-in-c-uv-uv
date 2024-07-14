@@ -60,10 +60,6 @@ void checkcustomdelimiter(const char* input, char* delimiter)
         strcpy(delimiter, "");
         appendcustomdelimiter(input,delimiter);
     }
-    else
-    {
-        delimiter = ",\n";
-    }
 }
 
 int calculatesum(const char* input, char* delimiter)
