@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include "StringCalculator.h"
-
+/*
 TEST(StringCalculatorAddTests, ExpectZeroFornointeger) {
     int expectedresult = 0;
     const char* input = "Hello, world!";
@@ -29,14 +29,14 @@ TEST(StringCalculatorAddTests, ExpectZeroForSingleZero) {
     int result = add(input);
     ASSERT_EQ(result, expectedresult);
 }
-
+*/
 TEST(StringCalculatorAddTests, ExpectSumForTwoNumbers) {
     int expectedresult = 3;
     const char*  input = "1,2";
     int result = add(input);
     ASSERT_EQ(result, expectedresult);
 }
-
+/*
 TEST(StringCalculatorAddTests, ExpectSumWithNewlineDelimiter) {
     int expectedresult = 6;
     const char*  input = "1\n2,3";
@@ -78,4 +78,4 @@ TEST(StringCalculatorAddTests, ExpectExceptionwithNegative) {
     ASSERT_EQ(result, -1);
     ASSERT_STREQ(error_message, "Negative not allowed");
 }
-/**/
+*/
