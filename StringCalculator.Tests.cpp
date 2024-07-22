@@ -60,7 +60,7 @@ TEST(StringCalculatorAddTests, ExpectSumWithCustomDelimiter) {
 
 TEST(StringCalculatorAddTests, ExpectSumWithCustomDelimiter2) {
     int expectedresult = 3;
-    const char*  input = "\n\n1,2";
+    const char*  input = "/1,2";
     int result = add(input);
     ASSERT_EQ(result, expectedresult);
 }
