@@ -1,9 +1,24 @@
 #include <gtest/gtest.h>
 #include "StringCalculator.h"
 
-TEST(StringCalculatorAddTests, ExpectZeroForEmptyInput) {
+TEST(StringCalculatorAddTests, ExpectZeroFornointeger) {
     int expectedresult = 0;
     const char* input = "Hello, world!";
+    int result = add(input);
+    ASSERT_EQ(result, expectedresult);
+}
+
+TEST(StringCalculatorAddTests, ExpectZeroForEmpty) {
+    int expectedresult = 0;
+    const char* input = "";
+    int result = add(input);
+    ASSERT_EQ(result, expectedresult);
+}
+
+
+TEST(StringCalculatorAddTests, ExpectZeroForNull) {
+    int expectedresult = 0;
+    const char* input = NULL;
     int result = add(input);
     ASSERT_EQ(result, expectedresult);
 }
@@ -41,4 +56,25 @@ TEST(StringCalculatorAddTests, ExpectSumWithCustomDelimiter) {
     const char*  input = "//;\n1;2";
     int result = add(input);
     ASSERT_EQ(result, expectedresult);
+}
+
+TEST(StringCalculatorAddTests, ExpectSumWithCustomDelimiter2) {
+    int expectedresult = 2;
+    const char*  input = "/1,2";
+    int result = add(input);
+    ASSERT_EQ(result, expectedresult);
+}
+
+TEST(StringCalculatorAddTests, ExpectSumWithMultipleCustomDelimiter) {
+    int expectedresult = 6;
+    const char*  input = "//[***]\n1***2***3";
+    int result = add(input);
+    ASSERT_EQ(result, expectedresult);
+}
+
+TEST(StringCalculatorAddTests, ExpectExceptionwithNegative) {
+    const char* input = "1,-2";
+    int result = add(input);
+    ASSERT_EQ(result, -1);
+    ASSERT_STREQ(error_message, "Negative not allowed");
 }
