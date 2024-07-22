@@ -50,14 +50,14 @@ TEST(StringCalculatorAddTests, IgnoreNumbersGreaterThan1000) {
     int result =add(input);
     ASSERT_EQ(result, expectedresult);
 }
-
+*/
 TEST(StringCalculatorAddTests, ExpectSumWithCustomDelimiter) {
     int expectedresult = 3;
     const char*  input = "//;\n1;2";
     int result = add(input);
     ASSERT_EQ(result, expectedresult);
 }
-
+/*
 TEST(StringCalculatorAddTests, ExpectSumWithCustomDelimiter2) {
     int expectedresult = 3;
     const char*  input = "\n1,2";
